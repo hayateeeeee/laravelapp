@@ -1,0 +1,10 @@
+@startuml
+actor ユーザ
+boundary ブラウザ
+control web.php
+control JissyuController
+
+ユーザ -> ブラウザ:該当ページをリクエスト[/jissyu2]
+
+
+@enduml
