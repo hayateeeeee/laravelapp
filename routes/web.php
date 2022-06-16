@@ -11,6 +11,8 @@
 |
 */
 
+//use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,10 +22,9 @@ Route::get('/', function () {
 
 
 
- Route::get('hello', 'HelloController@index');
- Route::get('hello', 'HelloController@index');
+Route::get('hello','HelloController@index');
 
 
 
  //--実習用--
- Route::get('jissyu2', 'JissyuController@index');
+ Route::get('jissyu2', 'JissyuController@indax');
