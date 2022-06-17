@@ -20,10 +20,10 @@ Route::get('/', function () {
   //  return '<html><body><h1>hello</h1><p>This is sample page.</p></body></html>';
  //});
 
+//--テキスト--
 
-
-Route::get('hello','HelloController@index');
-
+ Route::get('hello', 'HelloController@index');
+ Route::post('hello', 'HelloController@post');
 
 
  //--実習用--
