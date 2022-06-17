@@ -28,3 +28,6 @@ Route::get('/', function () {
 
  //--実習用--
  Route::get('jissyu2', 'JissyuController@indax');
+
+Route::get('jissyu3', 'Jissyu3_1Controller@index');
+Route::post('jissyu3_1', 'Jissyu3_1Controller@post');
