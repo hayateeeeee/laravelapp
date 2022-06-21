@@ -31,3 +31,4 @@ Route::get('/', function () {
 
 Route::get('jissyu3', 'Jissyu3_1Controller@index');
 Route::post('jissyu3_1', 'Jissyu3_1Controller@post');
+Route::get('jissyu3_3', 'Jissyu3_Controller@index');
