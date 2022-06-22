@@ -1,6 +1,6 @@
 @extends('layouts.jissyu')
 
-@section('title', 'Index')
+@section('title', 'Jissyu')
 
 @section('menu_title')
 Laravelについて
