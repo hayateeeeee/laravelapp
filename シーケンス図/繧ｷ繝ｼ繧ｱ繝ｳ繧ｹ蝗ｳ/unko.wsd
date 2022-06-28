@@ -1,0 +1,13 @@
+@startuml
+actor UsecaseBackgroundColor
+boundary fdlgauvhliguvnlglvoimfuldaviug
+control ssss
+
+UsecaseBackgroundColor -> fdlgauvhliguvnlglvoimfuldaviug:unko
+fdlgauvhliguvnlglvoimfuldaviug -> ssss:ppppppp
+
+
+
+
+
+@enduml
