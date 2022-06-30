@@ -5,7 +5,7 @@
   		<title>for文</title>
 </head>
 <body>
-@for($i=0; $i<10; $i++)
+@for($i=0; $i<1000; $i++)
    		@if($i%2 == 1)
    			<p style="background-color:red; color:aliceblue ">赤です</p>
    		@else
