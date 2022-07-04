@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\DB;
 class HelloController extends Controller
 {
     public function index(Request $request)
-    {
-       $items = DB::table('people')->get();
-       return view('hello.index', ['items' => $items]);
-    }
+{
+   $items = DB::table('people')->orderBy('age', 'asc')->get();
+   return view('hello.index', ['items' => $items]);
+}
 
    public function post(Request $request)
    {
@@ -74,11 +74,11 @@ public function remove(Request $request)
 
 public function show(Request $request)
 {
-   $min = $request->min;
-   $max = $request->max;
+   $page = $request->page;
    $items = DB::table('people')
-       ->whereRaw('age >= ? and age <= ?',
-        [$min, $max])->get();
+       ->offset($page * 3)
+       ->limit(3)
+       ->get();
    return view('hello.show', ['items' => $items]);
 }
 
