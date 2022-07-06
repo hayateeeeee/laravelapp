@@ -40,6 +40,9 @@ Route::post('hello/del', 'HelloController@remove');
 //----------------指定したIDのレコードを得るp207------------------------
 Route::get('hello/show', 'HelloController@show');
 
+//----------------p241---------------------
+Route::get('person', 'PersonController@index');
+
  //--実習用--
  Route::get('jissyu2', 'JissyuController@indax');
 
