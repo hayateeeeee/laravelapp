@@ -65,6 +65,15 @@ Route::get('board', 'BoardController@index');
 Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 
+//---------------p299---------------------
+Route::resource('rest', 'RestappController');
+
+//---------------p303--------------------
+Route::get('hello/rest', 'HelloController@rest');
+
+//----------------p309------------------
+Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session', 'HelloController@ses_put');
  //--実習用--
  Route::get('jissyu2', 'JissyuController@indax');
 
