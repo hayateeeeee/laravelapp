@@ -7,11 +7,13 @@ use App\Http\Requests\HelloRequest;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Person;
+use Illuminate\Support\Facades\Auth;
 
 class HelloController extends Controller
 {
    public function index(Request $request)
 {
+   $user = Auth::user();
    //$sort = $request->sort;
    if(isset($request->sort)){
       $sort = $request->sort;
@@ -20,7 +22,7 @@ class HelloController extends Controller
    }
    $items = Person::orderBy($sort, 'asc')
    ->paginate(5);
-   $param = ['items' => $items, 'sort' => $sort];
+   $param = ['items' => $items, 'sort' => $sort, 'user' => $user];
    return view('hello.index', $param);
 }
 
@@ -107,5 +109,24 @@ public function ses_put(Request $request)
    $msg = $request->input;
    $request->session()->put('msg', $msg);
    return redirect('hello/session');
+}
+
+public function getAuth(Request $request)
+{
+   $param = ['message' => 'ログインして下さい。'];
+   return view('hello.auth', $param);
+}
+
+public function postAuth(Request $request)
+{
+   $email = $request->email;
+   $password = $request->password;
+   if (Auth::attempt(['email' => $email,
+           'password' => $password])) {
+       $msg = 'ログインしました。（' . Auth::user()->name . '）';
+   } else {
+       $msg = 'ログインに失敗しました。';
+   }
+   return view('hello.auth', ['message' => $msg]);
 }
 }

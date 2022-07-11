@@ -23,7 +23,8 @@ Route::get('/', function () {
 //--テキスト--
 use App\Http\Middleware\HelloMiddleware;
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
 Route::post('hello', 'HelloController@post');
 
 Route::get('hello/add', 'HelloController@add');
@@ -74,6 +75,10 @@ Route::get('hello/rest', 'HelloController@rest');
 //----------------p309------------------
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
+
+//---------------p335--------------
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
  //--実習用--
  Route::get('jissyu2', 'JissyuController@indax');
 
@@ -81,3 +86,6 @@ Route::get('jissyu3', 'Jissyu3_1Controller@index');
 Route::post('jissyu3_1', 'Jissyu3_1Controller@post');
 Route::get('chapter3_2', 'Chapter3_2Controller@index');
 Route::get('jissyu3_3', 'Jissyu3_3Controller@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
