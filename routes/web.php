@@ -70,3 +70,6 @@ Route::get('jissyu14/edit', 'Jissyu6_3Controller@edit');
 Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
+
+Route::get('jissyu16', 'Jissyu6_5Controller@index');
+Route::get('jissyu16/show', 'Jissyu6_5Controller@show');

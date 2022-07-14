@@ -20,4 +20,15 @@ class Person extends Model
    {
       return $this->id . ': ' . $this->name . ' (' . $this->age . ')';
    }
+
+   public function subject()
+    {
+       return $this->hasMany('App\Subject');
+    }
+
+    public function subjects()
+    {
+       return $this->hasOne('App\Subject');
+    }
+
 }
