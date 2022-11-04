@@ -11,8 +11,17 @@
    .content {margin:10px; }
    .footer { text-align:right; font-size:10pt; margin:10px;
        border-bottom:solid 1px #ccc; color:#ccc; }
+       .box {
+            margin       : 0%;
+            width        : 400px;
+            height       : 25px;
+            background: black
+            }
    </style>
 </head>
+<header>
+   <div class="box"></div>
+</header>
 <body>
    <h1>@yield('title')</h1>
    <h2>@yield('menu_title')</h2>
